@@ -18,3 +18,15 @@ sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] h
 
 # Install for both desktop and web modes:
 sudo apt install pgadmin4
+
+# Create user in postgre
+sudo -i -u postgres
+createuser --interactive
+man createuser
+
+# Change passsword 
+psql postgres
+\password postgres
+
+
+
