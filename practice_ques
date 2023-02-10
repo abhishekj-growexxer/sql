@@ -1,0 +1,16 @@
+-- Write a sql query to find Employee_Name ,Department and Salary 
+-- whose salary exist between 12000 and 20000.
+
+-- Creating Employee table
+-- CREATE TABLE employee(
+--    emp_id INT PRIMARY KEY NOT NULL,
+--    emp_name TEXT NOT NULL
+-- );
+
+-- Creating Department table
+-- CREATE TABLE department(
+--    dept_id INT PRIMARY KEY NOT NULL,
+-- 	emp_id INT REFERENCES employee(emp_id),
+--    dept    CHAR(20) NOT NULL,
+--    salary  INT
+-- ); 
