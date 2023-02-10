@@ -15,3 +15,14 @@
 --    dept    CHAR(20) NOT NULL,
 --    salary  INT
 -- );
+
+-- Inserting values in Employee table
+-- INSERT INTO employee(emp_id, emp_name) 
+-- VALUES (11, 'Pavan'), (12, 'Abhishek'), (13, 'Akanksha'), (14, 'Tanya'), (15, 'Ruchit'), (16, 'Megh');
+
+-- Inserting values in Department table
+-- INSERT INTO department(dept_id, emp_id, dept, salary)
+-- VALUES (1, 11, 'HR', 10000), (2, 12, 'DATA', 15000), (3, 13, 'DATA', 20000), (4, 14, 'HR', 12000),(5, 15, 'WEB', 8000),(6, 16, 'DATA', 8000);
+
+-- SELECT * FROM employee;
+-- SELECT * FROM department;
