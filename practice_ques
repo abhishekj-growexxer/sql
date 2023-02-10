@@ -26,3 +26,23 @@
 
 -- SELECT * FROM employee;
 -- SELECT * FROM department;
+
+
+-- Using Inner Join
+-- SELECT emp_name, dept, salary 
+-- FROM employee AS emp JOIN department AS dept 
+-- ON emp.emp_id=dept.emp_id
+-- WHERE salary BETWEEN 12000 AND 20000;
+
+
+-- Using Natural join
+-- SELECT emp_name, dept, salary 
+-- FROM employee NATURAL JOIN department
+-- WHERE salary BETWEEN 12000 AND 15000;
+
+-- Using Sub Query
+-- SELECT emp_name, dept, salary
+-- FROM employee NATURAL JOIN department
+-- WHERE emp_id IN 
+-- (SELECT emp_id FROM department WHERE salary BETWEEN 12000 AND 15000);
+
