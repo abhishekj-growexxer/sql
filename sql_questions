@@ -1,0 +1,71 @@
+-- -- Write a sql query to find Employee_Name ,Department and Salary 
+-- -- whose salary exist between 12000 and 20000.
+
+-- -- Creating Employee table
+-- -- No need to specify PRIMARY KEY as NOT NULL
+-- CREATE TABLE employee(
+--    emp_id INT PRIMARY KEY,
+--    emp_name TEXT NOT NULL
+-- );
+
+-- -- Creating Department table
+-- CREATE TABLE department(
+--    dept_id INT PRIMARY KEY,
+-- 	emp_id INT REFERENCES employee(emp_id),
+--    dept    CHAR(20) NOT NULL,
+--    salary  INT
+-- );
+
+-- -- Inserting values in Employee table
+-- INSERT INTO employee(emp_id, emp_name)
+-- VALUES (11, 'Pavan'), (12, 'Abhishek'), (13, 'Akanksha'), (14, 'Tanya'), (15, 'Ruchit'), (16, 'Megh');
+
+-- -- Inserting values in Department table
+-- INSERT INTO department(dept_id, emp_id, dept, salary)
+-- VALUES (1, 11, 'HR', 10000), (2, 12, 'DATA', 15000), (3, 13, 'DATA', 20000), (4, 14, 'HR', 12000),(5, 15, 'WEB', 8000),(6, 16, 'DATA', 8000);
+
+-- SELECT * FROM employee;
+-- SELECT * FROM department;
+
+-- 1. write SQL query to calculate the sum of salary of each department 
+-- which is more than 20000
+
+-- SELECT dept, SUM(salary)
+-- FROM department
+-- GROUP BY dept
+-- HAVING SUM(salary)>20000;
+
+-- 2. Show the department's name,employee name 
+-- with emp_id where 2 or more 2 employees working.
+
+-- Show the department's name where 2 or more than 2 employees working.
+
+-- SELECT dept, COUNT(*)
+-- FROM department
+-- GROUP BY dept
+-- HAVING COUNT(*)>1;
+
+-- 3. Write a query to show records present in both tables 
+-- without using INNER JOIN.(department table and emp table)
+
+-- SELECT emp.emp_id, emp_name, dept_id, dept, salary
+-- FROM employee AS emp, department AS dept
+-- WHERE emp.emp_id=dept.emp_id;
+
+-- 4. write SQL query to show records where first_name has exactly 4 
+-- letters without using len function from the employee table.
+
+-- SELECT * FROM employee WHERE LENGTH(emp_name)=4;
+
+-- SELECT *
+-- FROM employee
+-- WHERE emp_name LIKE '____';
+
+-- 5. write a CTE that find highest salary by the department table. *
+
+-- WITH highest_salary AS (
+--     SELECT MAX(salary) FROM department
+-- )
+-- SELECT * FROM department 
+-- WHERE salary=(SELECT * FROM highest_salary);
+
